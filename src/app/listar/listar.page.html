@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listado de animales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let animal of animals | async">
+    <ion-avatar slot="start">
+      <ion-img [src]="animal?.url"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      <h2>{{animal.nombre}}</h2>
+      <h3>{{animal.color}}</h3>
+      <p>{{animal.grupoFamiliar}}</p>
+    </ion-label>
+  </ion-item>
+
+</ion-content>
